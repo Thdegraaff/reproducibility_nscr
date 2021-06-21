@@ -1,0 +1,26 @@
+---
+title: Reproducibility in the social sciences
+subtitle: Language, segregation & networks
+author: Thomas de Graaff
+date: June 24, 2021
+institute: Department of Spatial Economics, Vrije Universiteit Amsterdam
+output: 
+    binb::metropolis:
+        citation_package: biblatex
+bibliography: language.bib
+biblatexoptions: style= authoryear, natbib=true, giveninits=true, uniquename=init,doi=false,isbn=false,url=false, maxnames=2, maxcitenames=2, maxbibnames=10, dashed =true, useprefix=true
+biblio-title: "References"
+header-includes:
+ - '\makeatletter'
+ - '\beamer@ignorenonframefalse'
+ - '\makeatother'
+fontsize: 12pt
+---
+
+## Roadmap
+
+## Questions/comments?
+
+Get the source of this presentation from
+
+\begin{center}\url{https://github.com/Thdegraaff/language}\end{center}
