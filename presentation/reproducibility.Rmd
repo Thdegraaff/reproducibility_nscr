@@ -23,4 +23,4 @@ fontsize: 12pt
 
 Get the source of this presentation from
 
-\begin{center}\url{https://github.com/Thdegraaff/language}\end{center}
+\begin{center}\url{https://github.com/Thdegraaff/reproducibility_nscr}\end{center}
