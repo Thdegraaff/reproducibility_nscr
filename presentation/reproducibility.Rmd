@@ -1,23 +1,165 @@
 ---
 title: Reproducibility in the social sciences
-subtitle: Language, segregation & networks
+subtitle: Rationale, tools & best practice
 author: Thomas de Graaff
 date: June 24, 2021
 institute: Department of Spatial Economics, Vrije Universiteit Amsterdam
 output: 
     binb::metropolis:
         citation_package: biblatex
-bibliography: language.bib
+bibliography: ../references/reproducibility.bib
 biblatexoptions: style= authoryear, natbib=true, giveninits=true, uniquename=init,doi=false,isbn=false,url=false, maxnames=2, maxcitenames=2, maxbibnames=10, dashed =true, useprefix=true
 biblio-title: "References"
 header-includes:
- - '\makeatletter'
- - '\beamer@ignorenonframefalse'
- - '\makeatother'
+    - '\makeatletter'
+    - '\beamer@ignorenonframefalse'
+    - '\makeatother'
+    - \usepackage{dirtree}
 fontsize: 12pt
 ---
 
-## Roadmap
+## Replication crisis (?)---roadmap
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+	\begin{center}
+			\includegraphics[width = \textwidth]{../fig/replication_crisis}
+	\end{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+        \begin{itemize}
+            \item Why reproducibility?\newline
+            \item Which tools?\newline
+            \item How to write things down?\newline
+            \item Script \alert{everything}. No, really!\newline
+            \item Versioning
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+## Reproducibility in the social sciences
+
+- In the social sciences few attention to what workflow to use (and why)
+
+- more emphasis on \alert{transparency}
+
+    - scripts, data & additional analysis are openly shared
+    
+- increasing use of (large) datasets in the social sciences
+
+    - More positive approach
+    
+- Early work \citet{healyChoosingYourWork2011, arribas-belWooWIIWorkshopOpen2015,}
+
+## \alert{Why}? Keeping \alert{sanity}
+
+Because projects involve:
+
+\begin{itemize}
+\item whilst \alert{supervisor/referee} not satisfied
+\begin{itemize}
+\item whilst \alert{you} are not satisfied
+\begin{enumerate}
+\item read papers
+\item collect data;
+\item transform data;
+\item analyse data;
+\item write up results;
+\item present results;
+\end{enumerate}
+\end{itemize}
+\end{itemize}
+
+- Circular? \alert{No}, see wonderful [time-lapse video](https://www.youtube.com/watch?v=hNENiG7LAnc)
+
+## \alert{Why} II? Do not loose your thoughts!
+
+>  Notes aren’t a record of my thinking process. They are my thinking process---Richard Feynman
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+	\begin{center}
+			\includegraphics[width = 0.8\textwidth]{../fig/gtd}
+	\end{center}
+    \end{column}
+    \begin{column}{.5\textwidth}
+    More \alert{efficiency} \& \alert{creativity}
+        \begin{itemize}
+            \item "Never Have The Same Thought Twice. Unless You                 Like That Thought" \citep{allenGettingThingsDone2001}
+        \end{itemize}
+    \end{column}
+\end{columns}
+
+## The greater good (Nature, 2017)
+\centering
+![](../fig/factors.png) 
+
+# Organisation, R and RStudio
+
+## Organise your stuff!
+
+\begin{columns}
+\begin{column}{.5\textwidth}
+	\begin{center}
+			\includegraphics[width = 0.8\textwidth]{../fig/protip.png}
+	\end{center}
+\end{column}
+\begin{column}{.5\textwidth}
+    \dirtree{%
+      .1 /.
+      .2 project\_X.
+      .3 data.
+      .4 source.
+      .4 derived.
+      .3 docs.
+      .4 notes.
+      .4 paper.
+      .3 literature.
+      .3 code.
+      .4 r.
+      .5 data.
+      .5 figures.
+      }
+  \end{column}
+\end{columns}
+
+## Use projects
+
+## Multiple code files by functionality
+
+# Documentation
+
+## README files
+
+## Coding style
+
+## Creating documentation (advanced)
+
+# Script everything!
+
+## Reading data and data wrangling
+
+## Figures
+
+## Output
+
+## Functions (advanced)
+
+# Git and Github (advanced)
+
+# In conclusion
+
+## When should I adopt an open reproducable workflow?
+
+- The sooner the better (now you have time)
+
+- But think twice about tools to invest time in
+
+    - choose well-maintained tools with large communities (R, Python)
+    - invest some time in markup languages (RMarkdown, \LaTeX)
+    - really, really think about versioning (Git & Github)
+
+- Start one step at a time
 
 ## Questions/comments?
 
