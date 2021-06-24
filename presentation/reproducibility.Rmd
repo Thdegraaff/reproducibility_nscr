@@ -28,7 +28,7 @@ fontsize: 12pt
     \end{column}
     \begin{column}{.5\textwidth}
         \begin{itemize}
-            \item Why reproducibility?\newline
+            \item Why bother?\newline
             \item Tools for organisation?\newline
             \item How to document?\newline
             \item Script \alert{everything}. No, really!\newline
@@ -37,17 +37,18 @@ fontsize: 12pt
     \end{column}
 \end{columns}
 
-## Reproducibility in the social sciences
+## Reproducibility in the \alert{social} sciences
 
 - In the social sciences few attention to what workflow to use (and why)
 
 - more emphasis on \alert{transparency}
 
-    - scripts, data & additional analysis are openly shared
+    - scripts, data & additional analyses should be openly shared
     
-- increasing use of (large) datasets in the social sciences
+- Increasing use of (large) datasets in the social sciences
 
-    - More positivist approach
+    - more positivist & deductionist approach
+    - more tools readily available
     
 - Related work \citet{healyChoosingYourWork2011,  gandrudReproducibleResearchStudio2013,arribas-belWooWIIWorkshopOpen2015}
 
@@ -60,17 +61,18 @@ Because projects involve:
 \begin{itemize}
 \item whilst \alert{you} are not satisfied
 \begin{enumerate}
-\item read papers
+\item formulate research topic;
+\item read literature;
+\item organise ideas;
 \item collect data;
 \item transform data;
 \item analyse data;
-\item write up results;
-\item present results;
+\item present results.
 \end{enumerate}
 \end{itemize}
 \end{itemize}
 
-- Circular? \alert{No}, see wonderful [time-lapse video](https://www.youtube.com/watch?v=hNENiG7LAnc)
+- Circular? \alert{No}, see this wonderful [time-lapse video](https://www.youtube.com/watch?v=hNENiG7LAnc)
 
 ## \alert{Why} II? Do not loose your thoughts!
 
@@ -86,11 +88,12 @@ Because projects involve:
     More \alert{efficiency} \& \alert{creativity}
         \begin{itemize}
             \item "Never Have The Same Thought Twice. Unless You Like That Thought" \citep{allenGettingThingsDone2001}
+            \item connect literature with notes/ideas \citep{ahrensHowTakeSmart2017}
         \end{itemize}
     \end{column}
 \end{columns}
 
-## The greater good (Nature, 2017)
+## \alert{Why}? The greater good (Nature, 2017)
 \centering
 ![](../fig/factors.png) 
 
@@ -98,11 +101,18 @@ Because projects involve:
 
 As discussed by \citet{gandrudReproducibleResearchStudio2013}
 
-- document everything
-- everything is a (text) file
-- all files should be humanly readable
+- document \alert{everything}
+- everything is a \alert{text} file & humanly readable
+
+    - yes: `txt`, `csv`, `R`, `html`, `md`, `tex`
+    - no: `Rdata`, `docx`, `xlsx`, `dta`, `ppt`
+    
 - explicitly tie your files together
 - have a plan to organise, store and makes your files available
+
+My two-cents:
+
+- use \alert{open-source} as much as possible and make your work easily \alert{accessible}
 
 # Organisation, R and RStudio
 
@@ -139,14 +149,20 @@ As discussed by \citet{gandrudReproducibleResearchStudio2013}
 
 - Self contained package
 
-    - searching with a project
+    - searching within a project
     - use relative file names `"./code/read_data.R"`
+    
+        - even better in combination with package `here`
+    
     - `renv` keeps track of versions of packages
+    
+        - but, simple sessionInfo() 
+        
     - use version control of package contents
 
 ## Multiple code files by functionality
 
-1. For medium-sized projects  separate code in multiples by functionality
+1. For medium-sized projects  separate code in multiple `R`-files by functionality
 ```{r echo = T, results = 'hide', eval=FALSE}
 # r code contents of file "main.R"
 
@@ -167,9 +183,9 @@ source(process_output.R)
 \begin{column}{.5\textwidth}
 Write always a README file with information on: 
 	\begin{itemize}
-	    \item what/what order to run the code files
+	    \item what/in what order to run code files
 	    \item what tools you need (e.g., \LaTeX, \texttt{Make}, etc) 
-	    \item README files are text files---often with some structure (markup language). Example are markdown and R markdown. 
+	    \item README files are text files---often with some structure (markup language). Examples are Markdown and R Markdown. 
 	\end{itemize}
 \end{column}
 \begin{column}{.5\textwidth}
@@ -204,7 +220,7 @@ dat_inc <- dat %>%
 
 - If you write accompanying documentation text, always express \alert{why} you do something not what
 
-- For functions you might want to specify the \alert{type} of input and the type of output
+- For functions you might want to specify the \alert{type} of input and the \alert{type} of output
 
 ```{r echo = T, results = 'hide', eval=FALSE}
 # description of function
@@ -233,7 +249,7 @@ square <- function(x){
 
 ## Creating documentation: roxygen2 (advanced)
 
-Only when for packages (short-cut in R-studio): creates a skeleton
+Only for packages (short-cut in R-studio): creates a skeleton
 
 ```{r echo = T, results = 'hide', eval=FALSE}
 
@@ -256,7 +272,9 @@ square <- function(x){
 
 Script everything you can!
 
-- reading in data (e.g., `read_csv()`)
+- reading in data (e.g., `read_csv()`, or from API's)
+
+- removing (empty) rows/columns
 
 - (re)name variables
 
@@ -264,13 +282,15 @@ Script everything you can!
 
 - reshape data (e.g., `pivot_longer` & `pivot_wider`)
 
+So, do \alert{not} use excel---no nice breadcrumbs there!
+
 ## Figures, diagrams and 3D pie charts
 
 `ggplot2` works wonders as each element can scripted and saved
 
 - add elements (e.g., data labels in scatterplots)
 - combinations of elements
-- use of functions (e.g., to loop over histograms as descriptives)
+- use of functions (e.g., to loop over histograms as descriptives, or multiple descriptive maps)
 
 ## Output
 
@@ -284,7 +304,7 @@ pdf(file = "../fig/my_w_plot.pdf",
 dev.off()
 ```
 
-- automatically save (regression) output with `stargazer` or `texreg`
+- automatically save (regression) output with `stargazer`, `texreg`, `jtools`, \ldots
 
 ## Functions---why? (advanced)
 
@@ -320,12 +340,12 @@ df$a <- rescale(df$a)
 
 # Git and Github (advanced)
 
-## [Advanced] Git and Github Why-o-why should we do this?
+## [Advanced] Git and Github: why-o-why should we do this?
 
 \begin{columns}
 \begin{column}{.5\textwidth}
 	\begin{center}
-			\includegraphics[width = 0.8\textwidth]{../fig/version}
+			\includegraphics[width = \textwidth]{../fig/version}
 	\end{center}
 \end{column}
 \begin{column}{.5\textwidth}
@@ -335,8 +355,9 @@ df$a <- rescale(df$a)
         \item maintain a central repository\newline
         \item Github: make your work public\newline
     \end{itemize}
-    [Note 1: RStudio has Git functionality]\newline
-    [Note 2: a bit like Dropbox]
+    [Note 1: a bit like Dropbox]
+    [Note 2: RStudio has Git functionality]\newline
+
   \end{column}
 \end{columns}
 
