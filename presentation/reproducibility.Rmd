@@ -52,7 +52,7 @@ fontsize: 12pt
     
 - Related work \citet{healyChoosingYourWork2011,  gandrudReproducibleResearchStudio2013,arribas-belWooWIIWorkshopOpen2015}
 
-## \alert{Why}? Keeping \alert{sanity}
+## \alert{Why bother?} Keep your \alert{sanity}
 
 Because projects involve:
 
@@ -74,7 +74,7 @@ Because projects involve:
 
 - Circular? \alert{No}, see this wonderful [time-lapse video](https://www.youtube.com/watch?v=hNENiG7LAnc)
 
-## \alert{Why} II? Do not loose your thoughts!
+## \alert{Why bother} part II? Do not loose your thoughts!
 
 >  Notes aren’t a record of my thinking process. They are my thinking process---Richard Feynman
 
@@ -93,7 +93,7 @@ Because projects involve:
     \end{column}
 \end{columns}
 
-## \alert{Why}? The greater good (Nature, 2017)
+## \alert{Why bother?} The greater good (Nature, 2017)
 \centering
 ![](../fig/factors.png) 
 
@@ -102,7 +102,7 @@ Because projects involve:
 As discussed by \citet{gandrudReproducibleResearchStudio2013}
 
 - document \alert{everything}
-- everything is a \alert{text} file & humanly readable
+- everything is a \alert{text} file & \alert{humanly} readable
 
     - yes: `txt`, `csv`, `R`, `html`, `md`, `tex`
     - no: `Rdata`, `docx`, `xlsx`, `dta`, `ppt`
@@ -290,9 +290,9 @@ So, do \alert{not} use excel---no nice breadcrumbs there!
 
 - add elements (e.g., data labels in scatterplots)
 - combinations of elements
-- use of functions (e.g., to loop over histograms as descriptives, or multiple descriptive maps)
+- use of functions (e.g., to loop over histograms as descriptives, or multiple descriptive maps---with the help of `sf`-package)
 
-## Output
+## Script that \alert{output!}
 
 - save figures by `ggsave()` or open up a device and keep size constant
 
@@ -304,7 +304,7 @@ pdf(file = "../fig/my_w_plot.pdf",
 dev.off()
 ```
 
-- automatically save (regression) output with `stargazer`, `texreg`, `jtools`, \ldots
+- automatically save (regression) output with `stargazer`, `texreg`, `jtools`, \ldots $\longrightarrow$ example?
 
 ## Functions---why? (advanced)
 
@@ -323,7 +323,7 @@ df$c <- (df$c - min(df$c)) /
   (max(df$c) - min(df$c))
 ```
 
-## Function---because (advanced)
+## Functions---because (advanced)
 
 Consider writing a function whenever you’ve copied and pasted a block of code more than twice
 
@@ -332,7 +332,7 @@ Consider writing a function whenever you’ve copied and pasted a block of code 
 # output: vector of numeric values scaled at 
 #         interval [0-1]
 rescale <- function(x) {
-  rng <- range(x, na.rm = TRUE)
+  rng <- range(x)
   (x - rng[1]) / (rng[2] - rng[1])
 }
 df$a <- rescale(df$a)
@@ -355,8 +355,8 @@ df$a <- rescale(df$a)
         \item maintain a central repository\newline
         \item Github: make your work public\newline
     \end{itemize}
-    [Note 1: a bit like Dropbox]
-    [Note 2: RStudio has Git functionality]\newline
+    [Note 1: a bit like Dropbox]\newline
+    [Note 2: RStudio has Git functionality]
 
   \end{column}
 \end{columns}
@@ -365,15 +365,21 @@ df$a <- rescale(df$a)
 
 ## When should I adopt an open reproducable workflow?
 
-- The sooner the better (now you have time---seriously)
+- The sooner the better (now you have \alert{time}---seriously)
 
-- But think twice about tools to invest time in
+- But think twice about which \alert{tools} to invest time in
 
-    - choose well-maintained open-source tools with large communities (R, Python)
-    - invest some time in markup languages (RMarkdown, \LaTeX)
-    - really, really think about versioning (Git & Github)
+    - which tools go well together (reference management, editing, programming, versioning)?
+    - advise: choose well-maintained open-source tools with large communities (R, Python)
+    - advise: invest some time in markup languages ((R)Markdown, \LaTeX---consider Overleaf platform)
+    
+        - bonus: combines wonderfull with Hugo/Jekyll
+        
+    - advise: really, really think about versioning (Git & Github)
 
-- Start one step at a time
+- \alert{Baby steps}: start one step at a time
+
+> You take the red pill—you stay in Wonderland, and I show you how deep the rabbit hole goes
 
 ## Questions/comments?
 
